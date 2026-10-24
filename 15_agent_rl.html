@@ -10,7 +10,11 @@
 <header class="topbar">
   <a class="brand" href="index.html"><span class="dot">MM</span> MiniMind 从零学习</a>
   <span class="spacer"></span>
-  <nav><a href="index.html">课程主页</a><a href="notebooks/15_agent_rl.ipynb">配套 Notebook</a></nav>
+  <nav>
+    <a href="index.html">课程主页</a>
+    <a href="https://github.com/RAY-heZY/minimind-from-scratch" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="https://github.com/RAY-heZY/minimind-from-scratch/blob/main/notebooks/15_agent_rl.ipynb" target="_blank" rel="noopener">配套 Notebook ↗</a>
+  </nav>
 </header>
 
 <div class="layout">
@@ -62,7 +66,7 @@
     <section class="card">
       <h2>3. 训练管线：rollout 与 train 解耦</h2>
       <figure>
-        <img src="../images/rl-structure.jpg" alt="MiniMind RL 结构">
+        <img src="images/rl-structure.jpg" alt="MiniMind RL 结构">
         <figcaption>官方配图：MiniMind 的 RL 结构——训练侧、轨迹侧、rollout 侧解耦</figcaption>
       </figure>
       <pre><code>while True:
@@ -71,8 +75,8 @@
     advantages = normalize(rewards)            <span class="c"># ③ 组内归一化</span>
     policy_update(batch, advantages)           <span class="c"># ④ GRPO/CISPO 更新策略</span></code></pre>
       <div class="img-row">
-        <figure><img src="../images/agent_rl_loss.jpg" alt="Agentic RL 曲线"><figcaption>官方配图：Agentic RL 训练曲线</figcaption></figure>
-        <figure><img src="../images/agent_webui.jpg" alt="Agent WebUI"><figcaption>官方配图：Agent WebUI（思考 + 工具选择 + 多轮交互）</figcaption></figure>
+        <figure><img src="images/agent_rl_loss.jpg" alt="Agentic RL 曲线"><figcaption>官方配图：Agentic RL 训练曲线</figcaption></figure>
+        <figure><img src="images/agent_webui.jpg" alt="Agent WebUI"><figcaption>官方配图：Agent WebUI（思考 + 工具选择 + 多轮交互）</figcaption></figure>
       </div>
       <div class="callout tip">
         <div class="ct">✅ 动手提示</div>

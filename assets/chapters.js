@@ -2,6 +2,13 @@
    章节清单（HTML 页面与 Notebook 一一对应）
    修改这里即可同步所有页面的侧边栏与翻页导航
    ============================================================ */
+
+/* GitHub 仓库坐标 —— 由 tools/set_repo.py 自动写入，也可手动改这两行 */
+const REPO = "RAY-heZY/minimind-from-scratch";
+const BRANCH = "main";
+const REPO_URL = `https://github.com/${REPO}`;
+const nbUrl = (nb) => `${REPO_URL}/blob/${BRANCH}/notebooks/${nb}`;
+
 const CHAPTERS = [
   { n: "01", file: "01_overview.html",  nb: "01_overview.ipynb",  part: "base",  title: "项目总览与 uv 环境",       desc: "MiniMind 是什么、整体架构、用 uv 搭好可复现的实验环境。" },
   { n: "02", file: "02_tokenizer.html", nb: "02_tokenizer.ipynb", part: "base",  title: "分词器与数据流水线",        desc: "BPE 分词、特殊 token、Dataset / DataLoader 的构造。" },
@@ -33,7 +40,13 @@ function renderSidebar(current) {
       html += `<a href="${c.file}"><span class="n">${c.n}</span>${c.title}</a>`;
     }
   }
-  html += `<h4>资源</h4><a href="index.html"><span class="n">☰</span>课程主页</a>`;
+  const cur = CHAPTERS.find(x => x.n === current);
+  html += `<h4>资源</h4>`;
+  if (cur) {
+    html += `<a href="${nbUrl(cur.nb)}" target="_blank" rel="noopener"><span class="n">📓</span>本章 Notebook ↗</a>`;
+  }
+  html += `<a href="${REPO_URL}" target="_blank" rel="noopener"><span class="n">⌘</span>GitHub 仓库 ↗</a>`;
+  html += `<a href="index.html"><span class="n">☰</span>课程主页</a>`;
   host.innerHTML = html;
 }
 

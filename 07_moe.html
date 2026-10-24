@@ -10,7 +10,11 @@
 <header class="topbar">
   <a class="brand" href="index.html"><span class="dot">MM</span> MiniMind 从零学习</a>
   <span class="spacer"></span>
-  <nav><a href="index.html">课程主页</a><a href="notebooks/07_moe.ipynb">配套 Notebook</a></nav>
+  <nav>
+    <a href="index.html">课程主页</a>
+    <a href="https://github.com/RAY-heZY/minimind-from-scratch" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="https://github.com/RAY-heZY/minimind-from-scratch/blob/main/notebooks/07_moe.ipynb" target="_blank" rel="noopener">配套 Notebook ↗</a>
+  </nav>
 </header>
 
 <div class="layout">
@@ -63,7 +67,7 @@ y = Σ  weight_i · expert_i(x)            <span class="c"># 只调用被选中�
 prob  = scores.mean(0)                    <span class="c"># 每个专家的平均路由概率</span>
 aux_loss = (load · prob).sum() * n_experts * coef</code></pre>
       <figure>
-        <img src="../images/LLM-structure-moe.jpg" alt="MiniMind MoE 结构">
+        <img src="images/LLM-structure-moe.jpg" alt="MiniMind MoE 结构">
         <figcaption>官方配图：MoE 结构（前馈层替换为多个专家 + 路由器）</figcaption>
       </figure>
       <div class="callout tip">

@@ -10,7 +10,11 @@
 <header class="topbar">
   <a class="brand" href="index.html"><span class="dot">MM</span> MiniMind 从零学习</a>
   <span class="spacer"></span>
-  <nav><a href="index.html">课程主页</a><a href="notebooks/10_sft.ipynb">配套 Notebook</a></nav>
+  <nav>
+    <a href="index.html">课程主页</a>
+    <a href="https://github.com/RAY-heZY/minimind-from-scratch" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="https://github.com/RAY-heZY/minimind-from-scratch/blob/main/notebooks/10_sft.ipynb" target="_blank" rel="noopener">配套 Notebook ↗</a>
+  </nav>
 </header>
 
 <div class="layout">
@@ -71,7 +75,7 @@ loss = F.cross_entropy(logits, labels, ignore_index=-100)</code></pre>
         </tbody>
       </table>
       <figure>
-        <img src="../images/sft_loss.jpg" alt="SFT 损失曲线">
+        <img src="images/sft_loss.jpg" alt="SFT 损失曲线">
         <figcaption>官方配图：SFT 阶段损失曲线</figcaption>
       </figure>
       <div class="callout tip">
